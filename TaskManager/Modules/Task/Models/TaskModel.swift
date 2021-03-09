@@ -9,17 +9,34 @@ import Foundation
 
 // MARK: - TaskModel
 struct TaskModel: Codable, Comparable, Hashable {
-    let id: String?
-    let title, desc: String?
-    let dueDate: Date?
-    let shouldSync: Bool?
-    let status: String?
+    var title, desc: String?
+    var dueDate: String?
+    var shouldSync: Bool?
+    var status: String?
 
     enum CodingKeys: String, CodingKey {
-        case id
         case title
         case desc
         case dueDate, shouldSync, status
+    }
+    
+    let id: String
+    
+    public init() {
+        id = UUID().uuidString
+    }
+    
+    public init(from decoder: Decoder) throws {
+        
+        id = UUID().uuidString
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        title = try container.decodeIfPresent(String.self, forKey: .title)
+        desc = try container.decodeIfPresent(String.self, forKey: .desc)
+        dueDate = try container.decodeIfPresent(String.self, forKey: .dueDate)
+        shouldSync = try container.decodeIfPresent(Bool.self, forKey: .shouldSync)
+        status = try container.decodeIfPresent(String.self, forKey: .status)
+
     }
     
     public static func == (lhs: TaskModel, rhs: TaskModel) -> Bool {

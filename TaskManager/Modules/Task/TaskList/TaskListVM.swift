@@ -47,7 +47,7 @@ class TaskListVM: BaseViewModel {
     // MARK: - Init
     // MARK: - Lifecycle Methods
     func viewDidLoad() {
-        
+        tasks = serviceProvider.dbService.populateTasks()
     }
 
     func viewWillAppear() {
@@ -69,7 +69,7 @@ class TaskListVM: BaseViewModel {
             let date = task.dueDate
 
             // This code will crash if fullname is empty
-            let day = date?.toString(.EEEE_MM_dd) ?? "#"
+            let day = Date.getDate(fromString: date ?? "")?.toString(.EEEE_MM_dd) ?? "Without Due Date"
 
             var mutableOrderedSet = mappedSet[day] ?? Set<TaskModel>()
             mutableOrderedSet.insert(task)

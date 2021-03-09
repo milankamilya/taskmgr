@@ -44,6 +44,8 @@
 		846A728A25F736F3002C1BFC /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A728925F736F3002C1BFC /* Date+.swift */; };
 		846A729625F744FF002C1BFC /* TaskListVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A729525F744FF002C1BFC /* TaskListVMTests.swift */; };
 		846A729B25F74508002C1BFC /* TaskDetailVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A729A25F74508002C1BFC /* TaskDetailVMTests.swift */; };
+		846A72AC25F7492B002C1BFC /* sampletask.json in Resources */ = {isa = PBXBuildFile; fileRef = 846A72AB25F7492B002C1BFC /* sampletask.json */; };
+		846A72B425F74A96002C1BFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846A72B325F74A96002C1BFC /* Main.storyboard */; };
 		E0FBD802799EE402424683AA /* Pods_TaskManager_TaskManagerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE50598AFFF0269D54FB620 /* Pods_TaskManager_TaskManagerUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +112,8 @@
 		846A728925F736F3002C1BFC /* Date+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		846A729525F744FF002C1BFC /* TaskListVMTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListVMTests.swift; sourceTree = "<group>"; };
 		846A729A25F74508002C1BFC /* TaskDetailVMTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailVMTests.swift; sourceTree = "<group>"; };
+		846A72AB25F7492B002C1BFC /* sampletask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampletask.json; sourceTree = "<group>"; };
+		846A72B325F74A96002C1BFC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		93564D4BEAEF7B41F8DF93FC /* Pods-TaskManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskManager.debug.xcconfig"; path = "Target Support Files/Pods-TaskManager/Pods-TaskManager.debug.xcconfig"; sourceTree = "<group>"; };
 		9B0374BEFA079776A9CDCEF5 /* Pods_TaskManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04D0F4F3CCB8FAC32DA7B0E /* Pods-TaskManager-TaskManagerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskManager-TaskManagerUITests.debug.xcconfig"; path = "Target Support Files/Pods-TaskManager-TaskManagerUITests/Pods-TaskManager-TaskManagerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -284,6 +288,8 @@
 		846A723625F69DE7002C1BFC /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				846A72B325F74A96002C1BFC /* Main.storyboard */,
+				846A72AB25F7492B002C1BFC /* sampletask.json */,
 				846A713F25F667ED002C1BFC /* AppDelegate.swift */,
 				846A714125F667ED002C1BFC /* SceneDelegate.swift */,
 				846A714B25F667EE002C1BFC /* Assets.xcassets */,
@@ -472,9 +478,11 @@
 				846A726225F6A80F002C1BFC /* Colors.xcassets in Resources */,
 				846A725725F6A5B0002C1BFC /* TaskCell.xib in Resources */,
 				846A714F25F667EE002C1BFC /* LaunchScreen.storyboard in Resources */,
+				846A72B425F74A96002C1BFC /* Main.storyboard in Resources */,
 				846A71AF25F68975002C1BFC /* Task.storyboard in Resources */,
 				846A727F25F72CE9002C1BFC /* TaskHeaderView.xib in Resources */,
 				846A714C25F667EE002C1BFC /* Assets.xcassets in Resources */,
+				846A72AC25F7492B002C1BFC /* sampletask.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

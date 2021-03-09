@@ -25,4 +25,10 @@ extension Date {
         dateFormatter.dateFormat = format.rawValue
         return dateFormatter.string(from: self)
     }
+    
+    static func getDate(fromString: String) -> Date? {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime]
+        return formatter.date(from: fromString)
+    }
 }

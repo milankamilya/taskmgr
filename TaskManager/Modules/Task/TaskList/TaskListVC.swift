@@ -13,13 +13,14 @@ class TaskListVC: BaseViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.rowHeight = UITableView.automaticDimension
-            tableView.estimatedRowHeight = 99.0
-            tableView.sectionHeaderHeight = 0.0
+            tableView.estimatedRowHeight = 100.0
+            tableView.sectionHeaderHeight = 60.0
             tableView.sectionFooterHeight = 0.0
             tableView.separatorStyle = .none
             tableView.tableFooterView = UIView(frame: .zero)
 
             TaskCell.registerWithTable(tableView)
+            TaskHeaderView.registerWithTable(tableView)
         }
     }
 
@@ -43,6 +44,7 @@ class TaskListVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
+        pvtViewModel.viewDidLoad()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -58,7 +60,13 @@ class TaskListVC: BaseViewController {
     // MARK: - Initial Setup
     func initialSetup() {
         navigationItem.rightBarButtonItem = self.addButtonItem
-        
+        navigationItem.title = "Tasks"
+     
+        pvtViewModel?.reloadTableUI = { [weak self] () in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
     }
 
     // MARK: - Customize View
