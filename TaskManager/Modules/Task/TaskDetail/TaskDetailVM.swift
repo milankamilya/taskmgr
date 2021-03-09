@@ -10,6 +10,8 @@ import Foundation
 class TaskDetailVM: BaseViewModel {
     
     // MARK: - Public Properties
+    public var task: TaskModel?
+    
     // MARK: - Public Closures
     // MARK: - Private Property
     private let serviceProvider: TaskServiceProviderType

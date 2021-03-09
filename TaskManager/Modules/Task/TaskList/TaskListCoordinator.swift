@@ -8,6 +8,10 @@
 import UIKit
 
 class TaskListCoordinator: Coordinator {
+    
+    var navigateToDetail: (TaskModel) -> Void = {_ in}
+    var navigateToCreate: () -> Void = { }
+
     let navigationController: UINavigationController
 
     private static let storyboardName: String = "Task"
@@ -39,6 +43,19 @@ class TaskListCoordinator: Coordinator {
 
     @objc public override func start() {
         rootViewController.viewModel = viewModel
+        
+        viewModel.navigateToCreate = { [weak self] () in
+            DispatchQueue.main.async {
+                self?.navigateToCreate()
+            }
+        }
+        
+        viewModel.navigateToDetail = { [weak self] (model) in
+            DispatchQueue.main.async {
+                self?.navigateToDetail(model)
+            }
+        }
+        
         navigationController.pushViewController(rootViewController, animated: true)
     }
 

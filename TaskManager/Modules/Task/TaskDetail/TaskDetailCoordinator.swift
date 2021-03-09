@@ -31,10 +31,13 @@ class TaskDetailCoordinator: Coordinator {
 
     init(
         serviceProvider: TaskServiceProviderType,
-        navigationController: UINavigationController
+        navigationController: UINavigationController,
+        model: TaskModel?
     ) {
         self.serviceProvider = serviceProvider
         self.navigationController = navigationController
+        super.init()
+        viewModel.task = model
     }
 
     @objc public override func start() {

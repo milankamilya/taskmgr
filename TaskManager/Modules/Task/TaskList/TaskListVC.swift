@@ -24,9 +24,8 @@ class TaskListVC: BaseViewController {
         }
     }
 
-    let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+    let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
 
-    
     // MARK: - Public Properties
     override var viewModel: BaseViewModel? {
         get { return pvtViewModel }
@@ -61,7 +60,7 @@ class TaskListVC: BaseViewController {
     func initialSetup() {
         navigationItem.rightBarButtonItem = self.addButtonItem
         navigationItem.title = "Tasks"
-     
+
         pvtViewModel?.reloadTableUI = { [weak self] () in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
@@ -71,6 +70,9 @@ class TaskListVC: BaseViewController {
 
     // MARK: - Customize View
     // MARK: - IBActions
+    @objc func addButtonTapped() {
+        pvtViewModel?.navigateToCreate()
+    }
     // MARK: - Utility
 
 }

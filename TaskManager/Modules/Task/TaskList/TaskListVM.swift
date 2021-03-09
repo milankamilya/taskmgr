@@ -25,7 +25,7 @@ class TaskListVM: BaseViewModel {
     // MARK: - Public Closures
     var reloadTableUI: () -> Void = { }
     var navigateToDetail: (TaskModel) -> Void = {_ in}
-    var navigateToCreate: (TaskModel) -> Void = {_ in}
+    var navigateToCreate: () -> Void = { }
 
     // MARK: - Private Property
     private let serviceProvider: TaskServiceProviderType
