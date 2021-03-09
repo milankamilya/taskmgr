@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Regular.ttf">
+            <string>Inter-Regular</string>
+        </array>
+        <array key="Inter-SemiBold.ttf">
+            <string>Inter-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="99" id="KGk-i7-Jjw" customClass="TaskCell" customModule="TaskManager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3oT-pd-TwF">
+                        <rect key="frame" x="8" y="4" width="304" height="91"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20N-VP-vKv">
+                                <rect key="frame" x="16" y="8" width="272" height="75"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="DY6-jQ-59A">
+                                        <rect key="frame" x="0.0" y="0.0" width="176" height="75"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a xcode template project" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gG-jx-Qv6">
+                                                <rect key="frame" x="0.0" y="0.0" width="176" height="69"/>
+                                                <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="16"/>
+                                                <color key="textColor" name="text-primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZ8-Ud-dUK">
+                                                <rect key="frame" x="0.0" y="75" width="176" height="0.0"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="8" id="YIw-uM-xqP"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="c4t-vy-r4U">
+                                        <rect key="frame" x="176" y="0.0" width="96" height="75"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qux-gq-fel">
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="25"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpW-TA-pnI">
+                                                        <rect key="frame" x="11.5" y="0.0" width="84.5" height="25"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="259" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="749" text="Unsigned" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FxI-Y9-r3q">
+                                                                <rect key="frame" x="8" y="4" width="68.5" height="17"/>
+                                                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
+                                                                <color key="textColor" name="text-secondary"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="color_accent_green"/>
+                                                        <constraints>
+                                                            <constraint firstItem="FxI-Y9-r3q" firstAttribute="top" secondItem="tpW-TA-pnI" secondAttribute="top" constant="4" id="4Gg-Za-PaD"/>
+                                                            <constraint firstItem="FxI-Y9-r3q" firstAttribute="leading" secondItem="tpW-TA-pnI" secondAttribute="leading" constant="8" id="HRU-UA-jd4"/>
+                                                            <constraint firstAttribute="trailing" secondItem="FxI-Y9-r3q" secondAttribute="trailing" constant="8" id="JnD-dL-ECS"/>
+                                                            <constraint firstAttribute="bottom" secondItem="FxI-Y9-r3q" secondAttribute="bottom" constant="4" id="ggw-PJ-Tjj"/>
+                                                            <constraint firstAttribute="height" constant="25" id="kX7-W6-pWX"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="12"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="tpW-TA-pnI" secondAttribute="trailing" id="CWe-cb-V4Z"/>
+                                                    <constraint firstAttribute="bottom" secondItem="tpW-TA-pnI" secondAttribute="bottom" id="I0q-VJ-c1I"/>
+                                                    <constraint firstItem="tpW-TA-pnI" firstAttribute="top" secondItem="Qux-gq-fel" secondAttribute="top" id="Wc3-FG-7YY"/>
+                                                    <constraint firstItem="tpW-TA-pnI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Qux-gq-fel" secondAttribute="leading" constant="8" id="cpu-nU-7Ev"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FHt-6R-0ok">
+                                                <rect key="frame" x="0.0" y="33" width="96" height="42"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="753" text="Due" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EHp-gb-YVi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="96" height="16.5"/>
+                                                        <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="14"/>
+                                                        <color key="textColor" name="text-secondary"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="6 days left" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rq3-l4-buB">
+                                                        <rect key="frame" x="0.0" y="16.5" width="96" height="25.5"/>
+                                                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
+                                                        <color key="textColor" name="text-primary"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="background-cell"/>
+                        <constraints>
+                            <constraint firstItem="20N-VP-vKv" firstAttribute="top" secondItem="3oT-pd-TwF" secondAttribute="top" constant="8" id="8P4-2L-qNo"/>
+                            <constraint firstAttribute="bottom" secondItem="20N-VP-vKv" secondAttribute="bottom" constant="8" id="IdG-uE-FGM"/>
+                            <constraint firstAttribute="trailing" secondItem="20N-VP-vKv" secondAttribute="trailing" constant="16" id="mvd-4u-6Me"/>
+                            <constraint firstItem="20N-VP-vKv" firstAttribute="leading" secondItem="3oT-pd-TwF" secondAttribute="leading" constant="16" id="qao-7P-Sm1"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="3oT-pd-TwF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="3XN-av-kga"/>
+                    <constraint firstAttribute="bottom" secondItem="3oT-pd-TwF" secondAttribute="bottom" constant="4" id="OKJ-PN-Zfm"/>
+                    <constraint firstItem="3oT-pd-TwF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="mVr-zI-5fr"/>
+                    <constraint firstAttribute="trailing" secondItem="3oT-pd-TwF" secondAttribute="trailing" constant="8" id="x7T-21-X36"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="statusContainer" destination="FxI-Y9-r3q" id="hgP-aa-SUt"/>
+                <outlet property="statusLB" destination="FxI-Y9-r3q" id="hWu-9Q-ZaA"/>
+                <outlet property="titleLB" destination="6gG-jx-Qv6" id="eCc-Mj-jcX"/>
+            </connections>
+            <point key="canvasLocation" x="-197.10144927536234" y="108.48214285714285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="background-cell">
+            <color red="0.93226265451117729" green="0.92775897018986719" blue="0.93676633883248728" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="color_accent_green">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text-primary">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text-secondary">
+            <color red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

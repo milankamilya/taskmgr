@@ -10,6 +10,22 @@ import UIKit
 class TaskListVC: BaseViewController {
 
     // MARK: - IBOutlets
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.rowHeight = UITableView.automaticDimension
+            tableView.estimatedRowHeight = 99.0
+            tableView.sectionHeaderHeight = 0.0
+            tableView.sectionFooterHeight = 0.0
+            tableView.separatorStyle = .none
+            tableView.tableFooterView = UIView(frame: .zero)
+
+            TaskCell.registerWithTable(tableView)
+        }
+    }
+
+    let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+
+    
     // MARK: - Public Properties
     override var viewModel: BaseViewModel? {
         get { return pvtViewModel }
@@ -22,7 +38,7 @@ class TaskListVC: BaseViewController {
 
     // MARK: - File Private Properties
     fileprivate var pvtViewModel: TaskListVM!
-
+    
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +57,7 @@ class TaskListVC: BaseViewController {
 
     // MARK: - Initial Setup
     func initialSetup() {
+        navigationItem.rightBarButtonItem = self.addButtonItem
         
     }
 
@@ -48,4 +65,78 @@ class TaskListVC: BaseViewController {
     // MARK: - IBActions
     // MARK: - Utility
 
+}
+
+// MARK: - Table View Delegate
+extension TaskListVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        pvtViewModel?.cellSelected(forIndex: indexPath)
+    }
+
+}
+
+// MARK: - Table View Datasource
+extension TaskListVC: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return pvtViewModel?.numberOfSections ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if let headerType = pvtViewModel?.sectionType(forIndex: section) {
+            switch headerType {
+            case .simple(let model):
+                return headerForSimpleHeader(tableView, section: section, viewModel: model)
+            case .noDataFound:
+                return UIView(frame: .zero)
+            }
+        } else {
+            return UIView(frame: .zero)
+        }
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return pvtViewModel?.numberOfCells(inSection: section) ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cellType = pvtViewModel?.cellType(forIndex: indexPath) {
+            switch cellType {
+            case .simple(let model):
+                return cellForSimpleCell(tableView, indexPath: indexPath, viewModel: model)
+            case .noDataFound:
+                return UITableViewCell()
+            }
+        } else {
+            return UITableViewCell()
+        }
+
+    }
+
+    private func cellForSimpleCell(_ tableView: UITableView,
+                                   indexPath: IndexPath,
+                                   viewModel: TaskCellVM) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: TaskCell.reuseIdentifier,
+            for: indexPath)
+            as? TaskCell
+            else { return UITableViewCell() }
+
+        cell.selectionStyle = .none
+        cell.prepareCell(viewModel: viewModel)
+        return cell
+    }
+
+    private func headerForSimpleHeader(_ tableView: UITableView,
+                                       section: Int,
+                                       viewModel: TaskHeaderVM) -> UIView {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: TaskHeaderView.reuseIdentifier)
+            as? TaskHeaderView
+            else { return UITableViewCell() }
+
+        cell.selectionStyle = .none
+        cell.prepareHeader(viewModel: viewModel)
+        return cell
+    }
 }
